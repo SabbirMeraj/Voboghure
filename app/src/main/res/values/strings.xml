@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Voboghure</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Log In</string>
+    <string name="postTitle">Share your experience with others!!</string>
+    <string name="placeName">Place Name: </string>
+    <string name="budget">Budget</string>
+    <string name="duration">Duration</string>
+    <string name="description">Description</string>
+    <string name="post">Post</string>
+</resources>
