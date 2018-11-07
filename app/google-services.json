@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "86504931242",
+    "firebase_url": "https://voboghure-c8c53.firebaseio.com",
+    "project_id": "voboghure-c8c53",
+    "storage_bucket": "voboghure-c8c53.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:86504931242:android:46dc5f3826a36ab6",
+        "android_client_info": {
+          "package_name": "com.sabbirmeraj.voboghure"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "86504931242-8fnii67vguhrnbsg9mg6lg7k05hj874q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7urIk67lylDTo_nLpbaYV-glcVQMGC3Y"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

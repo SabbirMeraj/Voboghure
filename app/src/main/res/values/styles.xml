@@ -9,6 +9,19 @@
         <item name="android:windowBackground">@color/windowBackgroundColor </item>
     </style>
 
+    <style name="customText" >
+        <item name="android:textColor"> @color/buttonTextColor</item>
+        <item name="android:textSize"> 9pt </item>
+        <item name="android:textStyle"> bold </item>
 
+    </style>
+
+
+    <style name="customText2" parent="Base.Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textColor"> @color/buttonTextColor</item>
+        <item name="android:textSize"> 9pt </item>
+        <item name="android:textStyle"> bold </item>
+
+    </style>
 
 </resources>

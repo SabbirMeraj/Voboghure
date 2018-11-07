@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">Voboghure</string>
+
+    <string name="registrationLink">Don\'t have an account? Register here!</string>
+    <string name="registration">Registration</string>
+    <string name="name">Name</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="login">Log In</string>
@@ -9,4 +13,5 @@
     <string name="duration">Duration</string>
     <string name="description">Description</string>
     <string name="post">Post</string>
+    <string name="register">Register</string>
 </resources>
