@@ -14,4 +14,15 @@
     <string name="description">Description</string>
     <string name="post">Post</string>
     <string name="register">Register</string>
+    <string name="search">Search</string>
+
+
+    <string-array name="criteria">
+
+        <item>Place</item>
+        <item>Budget</item>
+        <item>Duration</item>
+        <item> Hotel</item>
+    </string-array>
+
 </resources>

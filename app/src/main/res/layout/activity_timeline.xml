@@ -6,4 +6,20 @@
     android:layout_height="match_parent"
     tools:context=".TimelineActivity">
 
+
+
+    <ListView
+        android:id="@+id/postList"
+        android:layout_width="match_parent"
+        android:layout_height="566dp"
+        android:layout_marginTop="32dp"
+        android:divider="@color/buttonColor"
+        android:dividerHeight="1dp"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+    </ListView>
+
+
+
 </android.support.constraint.ConstraintLayout>

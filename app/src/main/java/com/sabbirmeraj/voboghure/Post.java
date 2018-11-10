@@ -1,0 +1,68 @@
+package com.sabbirmeraj.voboghure;
+
+public class Post {
+    String place, description, id, userID;
+    int budget, duration;
+
+
+    public Post(String id, String userID, String place, int budget, int duration, String description){
+        this.id=id;
+        this.userID=userID;
+        this.place=place;
+        this.budget=budget;
+        this.duration=duration;
+        this.description=description;
+    }
+
+    public Post(){
+
+    }
+
+    public String getPlace() {
+        return place;
+    }
+
+    public void setPlace(String place) {
+        this.place = place;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getUserID() {
+        return userID;
+    }
+
+    public void setUserID(String userID) {
+        this.userID = userID;
+    }
+
+    public int getBudget() {
+        return budget;
+    }
+
+    public void setBudget(int budget) {
+        this.budget = budget;
+    }
+
+    public int getDuration() {
+        return duration;
+    }
+
+    public void setDuration(int duration) {
+        this.duration = duration;
+    }
+}

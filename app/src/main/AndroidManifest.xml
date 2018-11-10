@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.sabbirmeraj.voboghure">
 
+    <uses-permission android:name="android.permission.INTERNET" />
 
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -21,6 +21,9 @@
         <activity android:name=".HomeActivity" />
         <activity android:name=".TimelineActivity" />
         <activity android:name=".PostActivity" />
-        <activity android:name=".RegistrationActivity"/>    </application>
+        <activity android:name=".RegistrationActivity" />
+        <activity android:name=".SearchActivity" />
+        <activity android:name=".ContributeActivity"></activity>
+    </application>
 
 </manifest>

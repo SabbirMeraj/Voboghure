@@ -36,7 +36,7 @@ public class RegistrationActivity extends AppCompatActivity {
         name=findViewById(R.id.name);
 
         auth=FirebaseAuth.getInstance();
-        rootReference=FirebaseDatabase.getInstance().getReference();
+        rootReference=FirebaseDatabase.getInstance().getReference("users");
 
 
         dialog=new ProgressDialog(this);

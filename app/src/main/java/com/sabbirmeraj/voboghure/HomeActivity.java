@@ -47,7 +47,7 @@ public class HomeActivity extends AppCompatActivity {
                         startActivity(newActivity1);
                         break;
                     case 2:
-                        Intent newActivity2 = new Intent(HomeActivity.this,TimelineActivity.class);
+                        Intent newActivity2 = new Intent(HomeActivity.this, SearchActivity.class);
                         startActivity(newActivity2);
                         break;
                     case 3:
