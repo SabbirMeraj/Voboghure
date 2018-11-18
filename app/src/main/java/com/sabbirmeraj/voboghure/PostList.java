@@ -33,14 +33,14 @@ public class PostList extends ArrayAdapter<Post> {
         TextView placeName=listViewItem.findViewById(R.id.placeName);
         TextView budget=listViewItem.findViewById(R.id.budget);
         TextView duration=listViewItem.findViewById(R.id.duration);
-        TextView description=listViewItem.findViewById(R.id.description);
+        TextView description=listViewItem.findViewById(R.id.place);
 
         Post post=postList.get(position);
 
 
         placeName.setText(post.getPlace());
-        budget.setText(post.getBudget()+"");
-        duration.setText(post.getDuration()+"");
+        budget.setText("Budget: "+ post.getBudget()+"/=");
+        duration.setText("Duration: "+ post.getDuration()+"day(s)");
         description.setText(post.getDescription());
         return listViewItem;
     }

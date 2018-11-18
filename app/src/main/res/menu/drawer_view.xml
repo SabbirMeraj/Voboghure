@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/postInfo"
+            android:title="@string/share"
+            />
+        <item
+            android:id="@+id/timeline"
+            android:title="@string/timeline"
+            />
+
+
+        <item
+            android:id="@+id/contribution"
+            android:title="@string/contribution"
+            />
+
+        <item
+            android:id="@+id/search"
+            android:title="@string/search"
+            />
+        <item
+        android:id="@+id/hallOfFame"
+        android:title="HallOfFame"
+        />
+    </group>
+</menu>

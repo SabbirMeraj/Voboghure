@@ -8,21 +8,48 @@
     <string name="password">Password</string>
     <string name="login">Log In</string>
     <string name="postTitle">Share your experience with others!!</string>
-    <string name="placeName">Place Name: </string>
+    <string name="placeName">Place Name </string>
     <string name="budget">Budget</string>
     <string name="duration">Duration</string>
     <string name="description">Description</string>
     <string name="post">Post</string>
     <string name="register">Register</string>
     <string name="search">Search</string>
+    <string name="timeline">Timeline</string>
+    <string name="contribution">Contribution</string>
+    <string name="share">Share Experience</string>
+    <string name="hotelName"> Hotel Name</string>
+    <string name="guideName"> Guide Name</string>
+    <string name="address"> Address</string>
+    <string name="review"> Review</string>
+    <string name="phoneNumber"> Phone Number </string>
 
 
     <string-array name="criteria">
 
-        <item>Place</item>
-        <item>Budget</item>
-        <item>Duration</item>
-        <item> Hotel</item>
+    <item>Place</item>
+    <item>Budget</item>
+    <item>Duration</item>
+    <item> Hotel</item>
+</string-array>
+
+    <string-array name="contributionCriteria">
+
+        <item>---</item>
+        <item>Hotel</item>
+        <item>Guide</item>
+
     </string-array>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_example">Example action</string>
+
+    <string name="action_settings">Settings</string>
 
 </resources>

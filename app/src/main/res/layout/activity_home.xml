@@ -6,32 +6,5 @@
     android:layout_height="match_parent"
     tools:context=".HomeActivity">
 
-    <ListView
-        android:id="@+id/option_list"
-        android:layout_width="match_parent"
-        android:layout_height="566dp"
-        android:layout_marginTop="32dp"
-        android:divider="@color/buttonColor"
-        android:dividerHeight="1dp"
-        app:layout_constraintEnd_toStartOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/postTitle"></ListView>
-
-    <TextView
-        android:id="@+id/postTitle"
-        android:layout_width="221dp"
-        android:layout_height="49dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
-        android:text="@string/postTitle"
-        android:textSize="9pt"
-        android:textStyle="bold"
-        android:textColor="@color/buttonTextColor"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
 
 </android.support.constraint.ConstraintLayout>

@@ -6,88 +6,85 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
-    <!--
-    <ImageButton
-        android:id="@+id/img"
-        android:layout_width="316dp"
-        android:layout_height="150dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="64dp"
-        android:background="#00ffffff"
-        android:scaleType="centerCrop"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/add" />
-
--->
     <EditText
-        android:id="@+id/placeName"
+        android:id="@+id/hotelName"
         style="@style/Widget.AppCompat.Light.AutoCompleteTextView"
         android:layout_width="316dp"
-        android:layout_height="38dp"
+        android:layout_height="40dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/edit_text_background"
+        android:ems="10"
+        android:hint="@string/hotelName"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/hotelPlace"
+        style="@style/Widget.AppCompat.Light.AutoCompleteTextView"
+        android:layout_width="316dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/edit_text_background"
         android:ems="10"
         android:hint="@string/placeName"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/hotelName" />
 
     <EditText
-        android:id="@+id/budget"
-        android:layout_width="316dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/edit_text_background"
-        android:ems="10"
-        android:hint="@string/budget"
-        android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/placeName" />
-
-    <EditText
-        android:id="@+id/duration"
+        android:id="@+id/hotelAddress"
         style="@style/Widget.AppCompat.Light.AutoCompleteTextView"
         android:layout_width="316dp"
-        android:layout_height="38dp"
+        android:layout_height="40dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/edit_text_background"
         android:ems="10"
-        android:hint="@string/duration"
-        android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/budget" />
-
-
-    <EditText
-        android:id="@+id/place"
-        style="@style/Widget.AppCompat.Light.AutoCompleteTextView"
-        android:layout_width="316dp"
-        android:layout_height="38dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/edit_text_background"
-        android:ems="10"
-        android:hint="@string/description"
+        android:hint="@string/address"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/duration" />
+        app:layout_constraintTop_toBottomOf="@+id/hotelPlace" />
+
+    <EditText
+        android:id="@+id/hotelPhoneNumber"
+        style="@style/Widget.AppCompat.Light.AutoCompleteTextView"
+        android:layout_width="316dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/edit_text_background"
+        android:ems="10"
+        android:hint="@string/phoneNumber"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hotelAddress" />
+
+    <EditText
+        android:id="@+id/hotelReview"
+        style="@style/Widget.AppCompat.Light.AutoCompleteTextView"
+        android:layout_width="316dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/edit_text_background"
+        android:ems="10"
+        android:hint="@string/review"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hotelPhoneNumber" />
 
     <Button
         android:id="@+id/postHotel"
@@ -95,12 +92,13 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="32dp"
         android:background="@color/buttonColor"
-        android:onClick="post"
+        android:onClick="postHotel"
         android:text="@string/post"
         android:textColor="@color/buttonTextColor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/place" />
+        app:layout_constraintTop_toBottomOf="@+id/hotelReview" />
+
 </android.support.constraint.ConstraintLayout>
