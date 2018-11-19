@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.FrameLayout;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -16,22 +18,41 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
-public class SearchActivity extends AppCompatActivity {
+import java.util.ArrayList;
+import java.util.List;
+
+public class SearchActivity extends NavigationDrawerActivity {
 
 
     Spinner dropdown;
     EditText searchCriteria;
     String option,value;
     DatabaseReference rootReference;
-
+    ListView listView;
+    List<Post> postList;
+    List<Hotel> hotelList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search);
+        FrameLayout contentFrameLayout=(FrameLayout) findViewById(R.id.content_frame);
+        getLayoutInflater().inflate(R.layout.activity_search , contentFrameLayout);
         dropdown=findViewById(R.id.spinner1);
         searchCriteria=findViewById(R.id.criteria);
-        rootReference= FirebaseDatabase.getInstance().getReference();
+
+
+        listView=findViewById(R.id.postList);
+        postList=new ArrayList<>();
+        hotelList=new ArrayList<>();
+
+
+
+
+
+
+
+
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.criteria, android.R.layout.simple_spinner_item);
@@ -63,25 +84,145 @@ public class SearchActivity extends AppCompatActivity {
             searchByPlace();
         }
         else if(option.equals("Budget")){
-
+            searchByBudget();
         }
 
-        else if(option.equals("duration")){
-
+        else if(option.equals("Duration")){
+            searchByDuration();
         }
+
+        else if(option.equals("Hotel")){
+            searchHotel();
+        }
+    }
+
+    private void searchHotel() {
+        rootReference = FirebaseDatabase.getInstance().getReference("Hotels");
+        rootReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                postList.clear();
+
+                for (DataSnapshot hotelSnapshot : dataSnapshot.getChildren()) {
+                    Hotel hotel = hotelSnapshot.getValue(Hotel.class);
+
+
+                    if (hotel.getName().equals(value))
+                        hotelList.add(hotel);
+                }
+                HotelList adapter = new HotelList(SearchActivity.this, hotelList);
+                listView.setAdapter(adapter);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
+
+    private void searchByBudget() {
+        rootReference = FirebaseDatabase.getInstance().getReference("posts");
+        rootReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                postList.clear();
+
+                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                    Post post = postSnapshot.getValue(Post.class);
+                    int input = Integer.parseInt(value);
+                    int  end;
+                    end=input+700;
+
+                    if (post.getBudget() <= end)
+                        postList.add(post);
+                }
+                PostList adapter = new PostList(SearchActivity.this, postList);
+                listView.setAdapter(adapter);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
+
+
+    private void searchByDuration() {
+        rootReference = FirebaseDatabase.getInstance().getReference("posts");
+        rootReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                postList.clear();
+
+                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                    Post post = postSnapshot.getValue(Post.class);
+                    int input = Integer.parseInt(value);
+                    if (post.getDuration() == input)
+                        postList.add(post);
+                }
+                PostList adapter = new PostList(SearchActivity.this, postList);
+                listView.setAdapter(adapter);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 
     public void searchByPlace(){
 
+        rootReference= FirebaseDatabase.getInstance().getReference("posts");
+        rootReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                postList.clear();
+
+                for(DataSnapshot postSnapshot: dataSnapshot.getChildren()){
+                    Post post=postSnapshot.getValue(Post.class);
+
+                    if(post.getPlace().equals(value))
+                        postList.add(post);
+                }
+                PostList adapter= new PostList(SearchActivity.this, postList);
+                listView.setAdapter(adapter);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+        /*
         rootReference.child("posts").orderByChild("place").equalTo(value).addChildEventListener(new ChildEventListener() {
 
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
 
 
+
+
                dataSnapshot.getKey();
                 String sa=dataSnapshot.child("description").getValue().toString();
                 Toast.makeText(getApplicationContext(), sa + "yooo", Toast.LENGTH_SHORT).show();
+
+
+
+                postList.clear();
+
+                for(DataSnapshot postSnapshot: dataSnapshot.getChildren()){
+                    Post post=postSnapshot.getValue(Post.class);
+
+
+                    postList.add(post);
+                }
+                PostList adapter= new PostList(SearchActivity.this, postList);
+                listView.setAdapter(adapter);
+
             }
 
             @Override
@@ -104,5 +245,8 @@ public class SearchActivity extends AppCompatActivity {
 
             }
         });
-    }
+
+    */
+
+}
 }
