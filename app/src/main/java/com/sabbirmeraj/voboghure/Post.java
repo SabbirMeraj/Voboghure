@@ -1,7 +1,8 @@
 package com.sabbirmeraj.voboghure;
 
 public class Post {
-    String place, description, id, userID;
+    String place, description, id, userID, totalRating="0", totalPerson="0";
+
     int budget, duration;
 
 
@@ -16,6 +17,22 @@ public class Post {
 
     public Post(){
 
+    }
+
+    public String getTotalRating() {
+        return totalRating;
+    }
+
+    public void setTotalRating(String totalRating) {
+        this.totalRating = totalRating;
+    }
+
+    public void setTotalPerson(String totalPerson) {
+        this.totalPerson = totalPerson;
+    }
+
+    public String getTotalPerson() {
+        return totalPerson;
     }
 
     public String getPlace() {

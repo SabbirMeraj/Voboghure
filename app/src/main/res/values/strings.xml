@@ -24,15 +24,16 @@
     <string name="review"> Review</string>
     <string name="phoneNumber"> Phone Number </string>
     <string name="menu"> Menu </string>
-
+    <string name="rate"> Rate</string>
+    <string name="comment"> Comment </string>
 
     <string-array name="criteria">
 
-    <item>Place</item>
-    <item>Budget</item>
-    <item>Duration</item>
-    <item> Hotel</item>
-</string-array>
+        <item>Place</item>
+        <item>Budget</item>
+        <item>Duration</item>
+        <item> Hotel</item>
+    </string-array>
 
     <string-array name="contributionCriteria">
 

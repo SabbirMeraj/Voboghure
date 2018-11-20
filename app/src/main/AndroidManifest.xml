@@ -12,8 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".MainActivity"
             android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,13 +21,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".HomeActivity"
-            />
+        <activity android:name=".HomeActivity" />
         <activity android:name=".TimelineActivity" />
         <activity android:name=".PostActivity" />
         <activity android:name=".RegistrationActivity" />
         <activity android:name=".SearchActivity" />
         <activity android:name=".ContributeActivity" />
+        <activity android:name=".CommentActivity">
+        </activity>
+        <activity android:name=".HallOfFameActivity" />
     </application>
 
 </manifest>

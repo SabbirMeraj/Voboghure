@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
+import android.widget.RatingBar;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -76,7 +77,17 @@ public class PostActivity extends NavigationDrawerActivity {
         }
     }
 
+
+
     */
+
+
+
+
+
+
+
+
     public void post(View view){
        // progress.setMessage("Posting...");
       //  progress.show();
