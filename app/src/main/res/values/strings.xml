@@ -42,6 +42,14 @@
         <item>Guide</item>
 
     </string-array>
+
+
+    <string name="msg">
+        “We must experience Heaven on earth. May your homes, surroundings and work places portray a safe clean environment.
+        You have a responsibility to keep your homes, surroundings and city clean.”
+    </string>
+
+
     <string name="title_activity_main2">Main2Activity</string>
     <string name="title_section1">Section 1</string>
     <string name="title_section2">Section 2</string>

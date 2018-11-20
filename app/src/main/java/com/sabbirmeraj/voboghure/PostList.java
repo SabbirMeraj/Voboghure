@@ -60,7 +60,7 @@ public class PostList extends ArrayAdapter<Post> {
         TextView budget=listViewItem.findViewById(R.id.budget);
         TextView duration=listViewItem.findViewById(R.id.duration);
         TextView description=listViewItem.findViewById(R.id.place);
-        TextView user=listViewItem.findViewById(R.id.userName);
+        TextView user=listViewItem.findViewById(R.id.username);
 
         Button button=listViewItem.findViewById(R.id.rate);
         Button commentBtn=listViewItem.findViewById(R.id.commment);
@@ -72,7 +72,7 @@ public class PostList extends ArrayAdapter<Post> {
         ratingBar.setRating(t);
 
 
-        user.setText(getUserName(post.getUserID()));
+        user.setText(post.getUname());
         postID.setText(post.getId());
         userID.setText(post.getUserID());
 

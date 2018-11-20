@@ -52,8 +52,8 @@ public class CommentList extends ArrayAdapter<Comments> {
         Comments comment = (Comments) commentList.get(position);
 
 
-        user.setText(getUserName(comment.getUserID()));
-        //Toast.makeText(context, getUserName(comment.getUserID()),Toast.LENGTH_SHORT).show();
+        user.setText(comment.getUname());
+        //Toast.makeText(context, getUsername(comment.getUserID()),Toast.LENGTH_SHORT).show();
         userComment.setText(comment.getComment());
 
         return listViewItem;

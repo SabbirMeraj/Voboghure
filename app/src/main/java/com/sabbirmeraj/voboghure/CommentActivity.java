@@ -1,6 +1,7 @@
 package com.sabbirmeraj.voboghure;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.os.Bundle;
 import android.view.View;
@@ -31,7 +32,7 @@ public class CommentActivity extends NavigationDrawerActivity {
     ListView listView;
     List<Comments> commentList;
     EditText uComment;
-    String userID,postID;
+    String userID,postID,u;
 
 
 
@@ -87,7 +88,9 @@ public class CommentActivity extends NavigationDrawerActivity {
     public void submitComment(View view){
         final String userComment=uComment.getText().toString();
         String cid=rootReference.push().getKey();
-        Comments commentToBeAdded= new Comments(cid, postID,userID,userComment);
+        SharedPreferences prefs= getSharedPreferences(HomeActivity.MyPREFERENCES, MODE_PRIVATE);
+        u=prefs.getString("USER", null);
+        Comments commentToBeAdded= new Comments(cid, postID,userID,u, userComment);
 
         rootReference.child(cid).setValue(commentToBeAdded)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {

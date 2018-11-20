@@ -2,6 +2,7 @@ package com.sabbirmeraj.voboghure;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.os.Bundle;
@@ -9,14 +10,16 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
-import android.widget.RatingBar;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.StorageReference;
 
 public class PostActivity extends NavigationDrawerActivity {
@@ -29,7 +32,7 @@ public class PostActivity extends NavigationDrawerActivity {
     EditText placeName,budget, duration,description;
 
     FirebaseAuth auth;
-    String user;
+    String user,u ;
     DatabaseReference rootReference;
     StorageReference storage;
     private Uri imageUri;
@@ -96,6 +99,7 @@ public class PostActivity extends NavigationDrawerActivity {
      //   StorageReference filePath=storage.child("Images").child(imageUri.getLastPathSegment());
 
         user=auth.getCurrentUser().getUid();
+
         id=rootReference.push().getKey();
 
 
@@ -105,9 +109,11 @@ public class PostActivity extends NavigationDrawerActivity {
         tourBudget=Integer.parseInt(value);
         value=duration.getText().toString();
         tourDuration=Integer.parseInt(value);
+        DatabaseReference ref= FirebaseDatabase.getInstance().getReference("users");
+        SharedPreferences prefs= getSharedPreferences(HomeActivity.MyPREFERENCES, MODE_PRIVATE);
+        u=prefs.getString("USER", null);
 
-
-        Post postToBeAdded=new Post(id, user, place, tourBudget, tourDuration ,tourDescription);
+      final Post postToBeAdded=new Post(id, user, u, place, tourBudget, tourDuration ,tourDescription);
         /*
         filePath.putFile(imageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
@@ -126,11 +132,22 @@ public class PostActivity extends NavigationDrawerActivity {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if(task.isSuccessful()){
-                            Toast.makeText(getApplicationContext(), "Post has been added", Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(getApplicationContext(), "Post has been added", Toast.LENGTH_SHORT).show();
+
                             Intent i= new Intent(getApplicationContext(), PostActivity.class);
                             startActivity(i);
                         }
                     }
                 });
+    }
+
+
+
+    public void getUserName(String userID){
+
+
+
+       // System.out.println(userName);
+
     }
 }

@@ -22,7 +22,7 @@
             />
         <item
         android:id="@+id/hallOfFame"
-        android:title="HallOfFame"
+        android:title="Hall Of Fame"
         />
     </group>
 </menu>
