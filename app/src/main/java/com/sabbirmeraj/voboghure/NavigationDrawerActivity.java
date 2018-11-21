@@ -60,9 +60,14 @@ public class NavigationDrawerActivity extends AppCompatActivity {
                                                                          Intent newActivity3 = new Intent(NavigationDrawerActivity.this,ContributeActivity.class);
                                                                          startActivity(newActivity3);
                                                                          break;
-                                                                     case R.id.hallOfFame:
-                                                                         Intent newActivity4 = new Intent(NavigationDrawerActivity.this,HallOfFameActivity.class);
+
+                                                                     case R.id.suggestion:
+                                                                         Intent newActivity4 = new Intent(NavigationDrawerActivity.this,SuggestionActivity.class);
                                                                          startActivity(newActivity4);
+                                                                         break;
+                                                                     case R.id.hallOfFame:
+                                                                         Intent newActivity5 = new Intent(NavigationDrawerActivity.this,HallOfFameActivity.class);
+                                                                         startActivity(newActivity5);
                                                                          break;
 
 

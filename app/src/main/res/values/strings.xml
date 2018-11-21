@@ -26,6 +26,8 @@
     <string name="menu"> Menu </string>
     <string name="rate"> Rate</string>
     <string name="comment"> Comment </string>
+    <string name="suggestion"> Suggestion </string>
+
 
     <string-array name="criteria">
 

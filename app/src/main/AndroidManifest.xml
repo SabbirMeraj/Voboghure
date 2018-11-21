@@ -27,9 +27,9 @@
         <activity android:name=".RegistrationActivity" />
         <activity android:name=".SearchActivity" />
         <activity android:name=".ContributeActivity" />
-        <activity android:name=".CommentActivity">
-        </activity>
+        <activity android:name=".CommentActivity"></activity>
         <activity android:name=".HallOfFameActivity" />
+        <activity android:name=".SuggestionActivity"></activity>
     </application>
 
 </manifest>

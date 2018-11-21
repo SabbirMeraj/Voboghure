@@ -13,6 +13,9 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -79,7 +82,9 @@ public class SearchActivity extends NavigationDrawerActivity {
 
 
     public void search(View view){
+
         value=searchCriteria.getText().toString();
+        addToUserProfile(option,value);
         if(option.equals("Place")){
             searchByPlace();
         }
@@ -95,6 +100,8 @@ public class SearchActivity extends NavigationDrawerActivity {
             searchHotel();
         }
     }
+
+
 
     private void searchHotel() {
         rootReference = FirebaseDatabase.getInstance().getReference("Hotels");
@@ -197,6 +204,7 @@ public class SearchActivity extends NavigationDrawerActivity {
             }
         });
 
+
         /*
         rootReference.child("posts").orderByChild("place").equalTo(value).addChildEventListener(new ChildEventListener() {
 
@@ -249,4 +257,26 @@ public class SearchActivity extends NavigationDrawerActivity {
     */
 
 }
+
+
+    private void addToUserProfile(String option, String value) {
+        FirebaseAuth auth=FirebaseAuth.getInstance();
+        DatabaseReference ref;
+        String uid=auth.getCurrentUser().getUid();
+        String id;
+        ref=FirebaseDatabase.getInstance().getReference("userprofile");
+        id=ref.push().getKey();
+        UserProfile up= new UserProfile(id, uid, option, value);
+
+        ref.child(id).setValue(up).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+
+            }
+        });
+
+
+    }
 }
+
+

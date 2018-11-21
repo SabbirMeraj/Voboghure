@@ -20,6 +20,12 @@
             android:id="@+id/search"
             android:title="@string/search"
             />
+
+        <item
+            android:id="@+id/suggestion"
+            android:title="@string/suggestion"
+            />
+
         <item
         android:id="@+id/hallOfFame"
         android:title="Hall Of Fame"
