@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -35,7 +36,9 @@ public class PostList extends ArrayAdapter<Post> {
     RatingBar rb;
     float rate;
     String name;
-    String pID;
+    String pID, uid;
+
+    FirebaseAuth auth=FirebaseAuth.getInstance();
 
     float f,t;
     int p;
@@ -66,6 +69,8 @@ public class PostList extends ArrayAdapter<Post> {
         Button commentBtn=listViewItem.findViewById(R.id.commment);
         RatingBar ratingBar=listViewItem.findViewById(R.id.ratingBar);
         Post post=postList.get(position);
+        uid=auth.getCurrentUser().getUid();
+
         f=Float.parseFloat(post.getTotalRating());
         p=Integer.parseInt(post.getTotalPerson());
         t=f/p;
@@ -94,10 +99,11 @@ public class PostList extends ArrayAdapter<Post> {
                 popup.setIcon(android.R.drawable.btn_star_big_on);
                 popup.setTitle("Rate!");
                 pID=postID.getText().toString();
+
                 popup.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        addRating(postID.getText().toString(),userID.getText().toString(),rb);
+                        addRating(postID.getText().toString(),uid,rb);
                     }
                 });
 
@@ -147,7 +153,7 @@ public class PostList extends ArrayAdapter<Post> {
 
 
         ref=FirebaseDatabase.getInstance().getReference();
-
+        System.out.println("YOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO: "+postID);
         ref.child("posts").child(postID).addListenerForSingleValueEvent(new ValueEventListener() {
         @Override
         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

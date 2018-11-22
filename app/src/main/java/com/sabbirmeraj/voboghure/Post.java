@@ -20,6 +20,8 @@ public class Post {
 
     }
 
+
+
     public String getUname() {
         return uname;
     }

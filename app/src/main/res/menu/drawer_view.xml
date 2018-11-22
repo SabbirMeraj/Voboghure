@@ -30,5 +30,10 @@
         android:id="@+id/hallOfFame"
         android:title="Hall Of Fame"
         />
+
+
+        <item
+            android:id="@+id/logout"
+            android:title="Log out"/>
     </group>
 </menu>

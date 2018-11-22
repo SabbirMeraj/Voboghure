@@ -70,6 +70,11 @@ public class NavigationDrawerActivity extends AppCompatActivity {
                                                                          startActivity(newActivity5);
                                                                          break;
 
+                                                                         case R.id.logout:
+                                                                         Intent newActivity6 = new Intent(NavigationDrawerActivity.this,LogoutActivity.class);
+                                                                         startActivity(newActivity6);
+                                                                         break;
+
 
                                                                  }
 

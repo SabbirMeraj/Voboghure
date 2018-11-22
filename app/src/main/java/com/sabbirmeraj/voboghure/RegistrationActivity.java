@@ -20,7 +20,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class RegistrationActivity extends AppCompatActivity {
 
     EditText email,password,name;
-
+    String uid;
     DatabaseReference rootReference;
     FirebaseAuth auth;
     FirebaseUser currentUser;
@@ -60,7 +60,8 @@ public class RegistrationActivity extends AppCompatActivity {
                        public void onComplete(Task <AuthResult> task){
                            if(task.isSuccessful()){
                                currentUser=auth.getCurrentUser();
-                               User user=new User(name.getText().toString(), email.getText().toString(),password.getText().toString());
+                                uid=currentUser.getUid();
+                               User user=new User(uid,name.getText().toString(), email.getText().toString(),password.getText().toString());
                                rootReference.child(currentUser.getUid()).setValue(user)
                                        .addOnCompleteListener(new OnCompleteListener<Void>() {
                                            @Override
